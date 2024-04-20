@@ -1,0 +1,23 @@
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Module.Accounting.Infrastructure;
+using Module.Installer;
+
+namespace GlobalShopSolutions.Infrastructure;
+
+public static class ServiceExtensions
+{
+    public static IServiceCollection AddGlobalShopSolutions(
+        this IServiceCollection services,
+        IConfiguration configuration
+    )
+    {
+        services.InstallModules(
+            configuration, 
+            set => set
+                .Add<AccountingModuleInstaller>()
+        );
+        
+        return services;
+    }
+}

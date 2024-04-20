@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Modeling.Application\Modeling.Application.csproj" />
+      <ProjectReference Include="..\Modeling.Domain\Modeling.Domain.csproj" />
+      <ProjectReference Include="..\Modeling.Infrastructure\Modeling.Infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>

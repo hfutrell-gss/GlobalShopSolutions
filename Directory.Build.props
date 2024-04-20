@@ -1,0 +1,12 @@
+<Project>
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="Truss.Monads.Results" Version="0.0.2-alpha.*" />
+        <PackageReference Include="Truss.Monads.Results.Extensions.Fluent" Version="0.0.2-alpha.*" />
+    </ItemGroup>
+</Project>
