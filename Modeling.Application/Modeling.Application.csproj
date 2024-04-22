@@ -16,8 +16,4 @@
     <ItemGroup>
         <ProjectReference Include="..\Modeling.Domain\Modeling.Domain.csproj" />
     </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Installation\" />
-    </ItemGroup>
 </Project>

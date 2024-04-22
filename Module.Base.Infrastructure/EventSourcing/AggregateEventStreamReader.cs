@@ -5,7 +5,7 @@ using Modeling.Domain.Entities;
 using Modeling.Domain.EventSourcing;
 using Truss.Monads.Results;
 
-namespace Module.Installer.EventSourcing;
+namespace Module.Base.Infrastructure.EventSourcing;
 
 internal sealed class AggregateEventStreamReader : IAggregateEventStreamReader
 {

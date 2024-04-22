@@ -1,7 +1,7 @@
 using Modeling.Domain.Entities;
 using Modeling.Domain.Events;
 
-namespace Module.Installer.Buses;
+namespace Module.Base.Infrastructure.Buses;
 
 /// <summary>
 /// Generally used to dispatch events stored on an

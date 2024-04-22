@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Module.Base.Infrastructure;
 
 namespace Module.Installer;
 
@@ -15,7 +16,7 @@ public static class ServiceExtensions
                 services,
                 configuration
             ).InstallModulesFromSet(modules)
-            .InstallModulesFromSet(set => set.Add<InfrastructureModuleInstaller>())
+            .InstallModulesFromSet(set => set.Add<BaseInfrastructureInstaller>())
             .AddGlobalMappings();
 
         return services;

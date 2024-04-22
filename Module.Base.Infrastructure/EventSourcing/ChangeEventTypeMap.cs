@@ -1,7 +1,7 @@
 using Modeling.Application.Cqrs.EventSourcing.Events;
 using Modeling.Domain.EventSourcing;
 
-namespace Module.Installer;
+namespace Module.Base.Infrastructure.EventSourcing;
 
 public sealed class ChangeEventTypeMap
 {

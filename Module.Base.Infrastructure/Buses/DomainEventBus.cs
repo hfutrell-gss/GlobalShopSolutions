@@ -1,7 +1,7 @@
 using MediatR;
 using Modeling.Domain.Events;
 
-namespace Module.Installer.Buses;
+namespace Module.Base.Infrastructure.Buses;
 
 public sealed class DomainEventBus : IDomainEventBus
 {

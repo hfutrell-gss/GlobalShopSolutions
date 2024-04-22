@@ -1,7 +1,7 @@
 using Modeling.Domain.EventSourcing;
 using Newtonsoft.Json;
 
-namespace Module.Installer.EventSourcing;
+namespace Module.Base.Infrastructure.EventSourcing;
 
 /// <summary>
 /// Serialization for streaming change events

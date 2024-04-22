@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Module.Accounting.Infrastructure;
+using GlobalShopSolutions.FinanceAndAccounting.Infrastructure;
 using Module.Installer;
 
 namespace GlobalShopSolutions.Infrastructure;

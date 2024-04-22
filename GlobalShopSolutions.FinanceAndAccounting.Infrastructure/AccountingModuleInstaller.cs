@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Modeling.Infrastructure;
 
-namespace Module.Accounting.Infrastructure;
+namespace GlobalShopSolutions.FinanceAndAccounting.Infrastructure;
 
 public class AccountingModuleInstaller : IModuleInstaller
 {

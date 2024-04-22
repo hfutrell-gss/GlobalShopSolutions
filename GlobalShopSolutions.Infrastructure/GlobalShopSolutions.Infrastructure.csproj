@@ -11,7 +11,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\Modeling.Application\Modeling.Application.csproj" />
-        <ProjectReference Include="..\Module.Accounting.Infrastructure\Module.Accounting.Infrastructure.csproj" />
+        <ProjectReference Include="..\GlobalShopSolutions.FinanceAndAccounting.Infrastructure\GlobalShopSolutions.FinanceAndAccounting.Infrastructure.csproj" />
         <ProjectReference Include="..\Module.Installer\Module.Installer.csproj" />
     </ItemGroup>
 </Project>
