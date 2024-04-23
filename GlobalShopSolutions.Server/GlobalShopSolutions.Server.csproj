@@ -13,7 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\GlobalShopSolutions.Infrastructure\GlobalShopSolutions.Infrastructure.csproj" />
+      <ProjectReference Include="..\GlobalShopSolutions.Server.Infrastructure\GlobalShopSolutions.Server.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

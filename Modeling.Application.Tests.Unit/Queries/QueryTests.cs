@@ -1,7 +1,7 @@
+using GlobalShopSolutions.Server.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Modeling.Application.Cqrs.Queries;
 using Modeling.Application.Tests.Unit.Queries.TestApplication;
-using Module.Installer;
 
 namespace Modeling.Application.Tests.Unit.Queries;
 
