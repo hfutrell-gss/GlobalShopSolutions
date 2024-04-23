@@ -1,4 +1,4 @@
-using GlobalShopSolutions.Infrastructure;
+using GlobalShopSolutions.Server.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 

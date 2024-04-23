@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using GlobalShopSolutions.FinanceAndAccounting.Infrastructure;
 using Module.Installer;
 
-namespace GlobalShopSolutions.Infrastructure;
+namespace GlobalShopSolutions.Server.Infrastructure;
 
 public static class ServiceExtensions
 {
