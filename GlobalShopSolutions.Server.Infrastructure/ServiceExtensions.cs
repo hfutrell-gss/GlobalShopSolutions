@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using GlobalShopSolutions.Server.AccountsReceivable.Infrastructure;
+using AccountsReceivable.Infrastructure;
 
 namespace GlobalShopSolutions.Server.Infrastructure;
 

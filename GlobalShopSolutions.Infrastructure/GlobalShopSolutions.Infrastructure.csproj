@@ -12,6 +12,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\GlobalShopSolutions.FinanceAndAccounting.Package\GlobalShopSolutions.FinanceAndAccounting.Package.csproj" />
+      <ProjectReference Include="..\FinanceAndAccounting.ClientPackage\FinanceAndAccounting.ClientPackage.csproj" />
     </ItemGroup>
 </Project>

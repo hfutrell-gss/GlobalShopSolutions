@@ -10,7 +10,8 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\GlobalShopSolutions.Server.Sdk\GlobalShopSolutions.Server.Sdk.csproj" />
         <ProjectReference Include="..\Modeling.Application\Modeling.Application.csproj" />
-        <ProjectReference Include="..\GlobalShopSolutions.Server.AccountsReceivable.Infrastructure\GlobalShopSolutions.Server.AccountsReceivable.Infrastructure.csproj" />
+        <ProjectReference Include="..\AccountsReceivable.Infrastructure\AccountsReceivable.Infrastructure.csproj" />
     </ItemGroup>
 </Project>

@@ -26,7 +26,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{484C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalShopSolutions.Server", "GlobalShopSolutions.Server\GlobalShopSolutions.Server.csproj", "{32FB87F6-E979-4E0C-A971-6E7DB4F1A23B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalShopSolutions.Server.AccountsReceivable.Infrastructure", "GlobalShopSolutions.Server.AccountsReceivable.Infrastructure\GlobalShopSolutions.Server.AccountsReceivable.Infrastructure.csproj", "{B042EA2D-EC7F-4D26-A80A-71971648DB6E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountsReceivable.Infrastructure", "AccountsReceivable.Infrastructure\AccountsReceivable.Infrastructure.csproj", "{B042EA2D-EC7F-4D26-A80A-71971648DB6E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B6337E48-8153-4330-A422-BD94D1B6FEF4}"
 EndProject
@@ -38,7 +38,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D6285067
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Infrastructure.InMemory", "Tests.Infrastructure.InMemory\Tests.Infrastructure.InMemory.csproj", "{17213620-7823-40B2-9692-9D12BC3DAACB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalShopSolutions.Server.AccountsReceivable.Domain", "GlobalShopSolutions.Server.AccountsReceivable.Domain\GlobalShopSolutions.Server.AccountsReceivable.Domain.csproj", "{5EC4EAF4-AC82-4E49-99CD-7A84F20F7387}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountsReceivable.Domain", "AccountsReceivable.Domain\AccountsReceivable.Domain.csproj", "{5EC4EAF4-AC82-4E49-99CD-7A84F20F7387}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalShopSolutions", "GlobalShopSolutions\GlobalShopSolutions.csproj", "{CF1E768A-A55C-4BA5-AF1B-5828EC5DCFCE}"
 EndProject
@@ -46,15 +46,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Desktop", "Desktop", "{2D66
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalShopSolutions.Infrastructure", "GlobalShopSolutions.Infrastructure\GlobalShopSolutions.Infrastructure.csproj", "{17FCB8CE-A4CD-49B5-AF32-5DBAFC5B8038}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FinanceAndAccounting", "FinanceAndAccounting", "{BEF204E2-C1D2-4CFB-9813-0665A768BAA4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalShopSolutions.AccountsReceivable.Client", "GlobalShopSolutions.AccountsReceivable.Client\GlobalShopSolutions.AccountsReceivable.Client.csproj", "{CFFE0FD7-54B7-431C-8D98-C6CF7F0A5453}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalShopSolutions.AccountsReceivable.Presenter.Desktop", "GlobalShopSolutions.AccountsReceivable.Presenter.Desktop\GlobalShopSolutions.AccountsReceivable.Presenter.Desktop.csproj", "{EC21CC38-17EE-4647-B4B6-E9D51A310B04}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountsReceivable.Desktop", "AccountsReceivable.Desktop\AccountsReceivable.Desktop.csproj", "{EC21CC38-17EE-4647-B4B6-E9D51A310B04}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalShopSolutions.Sdk", "GlobalShopSolutions.Sdk\GlobalShopSolutions.Sdk.csproj", "{9AFD5EC0-2F58-41DE-A495-78A975BE3AAC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presenters", "Presenters", "{B8700693-BC98-447A-9346-FF5B98F41289}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Areas", "Areas", "{B8700693-BC98-447A-9346-FF5B98F41289}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SupplyChainManagement", "SupplyChainManagement", "{4B85E705-5D93-4614-A168-96B733D3857A}"
 EndProject
@@ -66,7 +62,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ManufacturingAndProduction"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FinanceAndAccounting", "FinanceAndAccounting", "{0D4080F0-9B89-42FE-83CB-EAB58FEB6705}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalShopSolutions.FinanceAndAccounting.Package", "GlobalShopSolutions.FinanceAndAccounting.Package\GlobalShopSolutions.FinanceAndAccounting.Package.csproj", "{D3DC7CF6-2BC9-490D-8AF8-1C25BB147579}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceAndAccounting.ClientPackage", "FinanceAndAccounting.ClientPackage\FinanceAndAccounting.ClientPackage.csproj", "{D3DC7CF6-2BC9-490D-8AF8-1C25BB147579}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{921615B2-51E2-43B7-8B92-4DB210E94110}"
 EndProject
@@ -74,9 +70,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AccountsReceivable", "Accou
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Areas", "Areas", "{560E1C66-B4C2-4978-84CC-E488AEFF0699}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalShopSolutions.Server.AccountsReceivable.Integrations", "GlobalShopSolutions.Server.AccountsReceivable.Integrations\GlobalShopSolutions.Server.AccountsReceivable.Integrations.csproj", "{DC87EA7B-79A8-4E3E-99D5-B5FA80F1B331}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountsReceivable.Integrations", "AccountsReceivable.Integrations\AccountsReceivable.Integrations.csproj", "{DC87EA7B-79A8-4E3E-99D5-B5FA80F1B331}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{A92221B5-0CE1-48A8-83E3-04E8FCD4512F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E4A08773-E56D-40EB-B233-BF6274798ADB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceAndAccounting.ServerPackageInstaller", "FinanceAndAccounting.ServerPackageInstaller\FinanceAndAccounting.ServerPackageInstaller.csproj", "{806DFBDB-DAEB-482C-AC7F-719CB6EF6C40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountsReceivable.Endpoints", "AccountsReceivable.Endpoints\AccountsReceivable.Endpoints.csproj", "{9F8235F7-AC78-4734-9A4E-C93B84836FF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accounts.Receivable.Application", "Accounts.Receivable.Application\Accounts.Receivable.Application.csproj", "{BAC7D15E-1DA6-4C39-BFC0-339452724A33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalShopSolutions.Sdk.Desktop", "GlobalShopSolutions.Sdk.Desktop\GlobalShopSolutions.Sdk.Desktop.csproj", "{0406906D-3416-44F4-8D30-8676A9AB46BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{C5ABA7C9-648B-479C-A868-AF93B0A3CEA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalShopSolutions.Server.Sdk", "GlobalShopSolutions.Server.Sdk\GlobalShopSolutions.Server.Sdk.csproj", "{B45BF425-A011-459E-B3E0-B8E215B282B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -144,10 +154,6 @@ Global
 		{17FCB8CE-A4CD-49B5-AF32-5DBAFC5B8038}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17FCB8CE-A4CD-49B5-AF32-5DBAFC5B8038}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17FCB8CE-A4CD-49B5-AF32-5DBAFC5B8038}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CFFE0FD7-54B7-431C-8D98-C6CF7F0A5453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CFFE0FD7-54B7-431C-8D98-C6CF7F0A5453}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CFFE0FD7-54B7-431C-8D98-C6CF7F0A5453}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CFFE0FD7-54B7-431C-8D98-C6CF7F0A5453}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EC21CC38-17EE-4647-B4B6-E9D51A310B04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EC21CC38-17EE-4647-B4B6-E9D51A310B04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC21CC38-17EE-4647-B4B6-E9D51A310B04}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -164,6 +170,26 @@ Global
 		{DC87EA7B-79A8-4E3E-99D5-B5FA80F1B331}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC87EA7B-79A8-4E3E-99D5-B5FA80F1B331}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC87EA7B-79A8-4E3E-99D5-B5FA80F1B331}.Release|Any CPU.Build.0 = Release|Any CPU
+		{806DFBDB-DAEB-482C-AC7F-719CB6EF6C40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{806DFBDB-DAEB-482C-AC7F-719CB6EF6C40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{806DFBDB-DAEB-482C-AC7F-719CB6EF6C40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{806DFBDB-DAEB-482C-AC7F-719CB6EF6C40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F8235F7-AC78-4734-9A4E-C93B84836FF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F8235F7-AC78-4734-9A4E-C93B84836FF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F8235F7-AC78-4734-9A4E-C93B84836FF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F8235F7-AC78-4734-9A4E-C93B84836FF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAC7D15E-1DA6-4C39-BFC0-339452724A33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAC7D15E-1DA6-4C39-BFC0-339452724A33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAC7D15E-1DA6-4C39-BFC0-339452724A33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAC7D15E-1DA6-4C39-BFC0-339452724A33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0406906D-3416-44F4-8D30-8676A9AB46BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0406906D-3416-44F4-8D30-8676A9AB46BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0406906D-3416-44F4-8D30-8676A9AB46BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0406906D-3416-44F4-8D30-8676A9AB46BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B45BF425-A011-459E-B3E0-B8E215B282B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B45BF425-A011-459E-B3E0-B8E215B282B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B45BF425-A011-459E-B3E0-B8E215B282B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B45BF425-A011-459E-B3E0-B8E215B282B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F829556D-CB54-42FA-BC91-EEDDEA451D9D} = {E65505EB-C38C-48BE-A111-1DFB09A541FB}
@@ -183,11 +209,7 @@ Global
 		{17213620-7823-40B2-9692-9D12BC3DAACB} = {D6285067-DD3B-44E5-BCA7-41F6880A01A1}
 		{CF1E768A-A55C-4BA5-AF1B-5828EC5DCFCE} = {2D6666E7-A7DE-427D-B760-C14A6FFA7F93}
 		{17FCB8CE-A4CD-49B5-AF32-5DBAFC5B8038} = {2D6666E7-A7DE-427D-B760-C14A6FFA7F93}
-		{CFFE0FD7-54B7-431C-8D98-C6CF7F0A5453} = {BEF204E2-C1D2-4CFB-9813-0665A768BAA4}
-		{9AFD5EC0-2F58-41DE-A495-78A975BE3AAC} = {2D6666E7-A7DE-427D-B760-C14A6FFA7F93}
 		{B8700693-BC98-447A-9346-FF5B98F41289} = {2D6666E7-A7DE-427D-B760-C14A6FFA7F93}
-		{2D6666E7-A7DE-427D-B760-C14A6FFA7F93} = {C59A64D1-8D54-4C1A-B5F6-A9831C3E98B6}
-		{BEF204E2-C1D2-4CFB-9813-0665A768BAA4} = {484CB26D-0491-4F76-AC92-5FD90918FB05}
 		{0D4080F0-9B89-42FE-83CB-EAB58FEB6705} = {B8700693-BC98-447A-9346-FF5B98F41289}
 		{D3DC7CF6-2BC9-490D-8AF8-1C25BB147579} = {0D4080F0-9B89-42FE-83CB-EAB58FEB6705}
 		{921615B2-51E2-43B7-8B92-4DB210E94110} = {3EAC1896-1D8F-4E19-A940-F127A513BDAD}
@@ -203,5 +225,15 @@ Global
 		{DC87EA7B-79A8-4E3E-99D5-B5FA80F1B331} = {62555305-A172-4506-8986-5DE8AA2DA11B}
 		{A92221B5-0CE1-48A8-83E3-04E8FCD4512F} = {0D4080F0-9B89-42FE-83CB-EAB58FEB6705}
 		{EC21CC38-17EE-4647-B4B6-E9D51A310B04} = {A92221B5-0CE1-48A8-83E3-04E8FCD4512F}
+		{D6285067-DD3B-44E5-BCA7-41F6880A01A1} = {C59A64D1-8D54-4C1A-B5F6-A9831C3E98B6}
+		{2D6666E7-A7DE-427D-B760-C14A6FFA7F93} = {484CB26D-0491-4F76-AC92-5FD90918FB05}
+		{E4A08773-E56D-40EB-B233-BF6274798ADB} = {484CB26D-0491-4F76-AC92-5FD90918FB05}
+		{806DFBDB-DAEB-482C-AC7F-719CB6EF6C40} = {3EAC1896-1D8F-4E19-A940-F127A513BDAD}
+		{9F8235F7-AC78-4734-9A4E-C93B84836FF2} = {62555305-A172-4506-8986-5DE8AA2DA11B}
+		{BAC7D15E-1DA6-4C39-BFC0-339452724A33} = {62555305-A172-4506-8986-5DE8AA2DA11B}
+		{0406906D-3416-44F4-8D30-8676A9AB46BE} = {2D6666E7-A7DE-427D-B760-C14A6FFA7F93}
+		{C5ABA7C9-648B-479C-A868-AF93B0A3CEA8} = {484CB26D-0491-4F76-AC92-5FD90918FB05}
+		{9AFD5EC0-2F58-41DE-A495-78A975BE3AAC} = {C5ABA7C9-648B-479C-A868-AF93B0A3CEA8}
+		{B45BF425-A011-459E-B3E0-B8E215B282B0} = {2239E78D-A96D-4442-9C72-A31CE6827C9D}
 	EndGlobalSection
 EndGlobal

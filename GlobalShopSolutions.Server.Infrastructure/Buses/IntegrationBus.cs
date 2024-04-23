@@ -1,5 +1,5 @@
-﻿using MediatR;
-using Modeling.Application.Integrations;
+﻿using GlobalShopSolutions.Server.Sdk.Integrations;
+using MediatR;
 using Truss.Monads.Results;
 
 namespace GlobalShopSolutions.Server.Infrastructure.Buses;

@@ -1,4 +1,4 @@
-﻿using GlobalShopSolutions.FinanceAndAccounting.Package;
+﻿using FinanceAndAccounting.ClientPackage;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -21,7 +21,7 @@ public static class ServiceExtensions
     )
     {
         var installer = new PackageInstallerAgent(services, configuration)
-            .InstallPackagesFromSet(set => set.Add<FinanceAndAccountingPackageManifest>());
+            .InstallPackagesFromSet(set => set.Add<FinanceAndAccountingDesktopPackageManifest>());
         return services;
     }
 }

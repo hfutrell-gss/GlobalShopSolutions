@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 namespace GlobalShopSolutions.Infrastructure;
 
 /// <summary>
-/// Registers the package factory and populates
+/// Registers the package manager and populates
 /// it with base packages from the base manifests
 /// </summary>
 internal sealed class PackageInstallerAgent
@@ -27,7 +27,7 @@ internal sealed class PackageInstallerAgent
         Action<PackageManifestSet> packageManifestSetBuilder
     )
     {
-        var packageFactory = new PackageFactory(_services);
+        var packageManager = new PackageManager(_services);
         
         var packageManifestSet = new PackageManifestSet();
 
