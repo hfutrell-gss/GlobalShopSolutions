@@ -1,9 +1,9 @@
+using GlobalShopSolutions.Server.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Modeling.Application.Cqrs.EventSourcing.Reading;
 using Modeling.Application.Cqrs.EventSourcing.Writing;
 using Modeling.Application.Tests.Unit.EventSourcing.TestApplication;
 using Modeling.Domain.Events;
-using Module.Installer;
 using Tests.Infrastructure.InMemory;
 
 namespace Modeling.Application.Tests.Unit.EventSourcing;

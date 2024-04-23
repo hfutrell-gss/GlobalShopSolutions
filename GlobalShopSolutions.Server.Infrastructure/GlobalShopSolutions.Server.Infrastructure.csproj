@@ -11,7 +11,6 @@
 
     <ItemGroup>
         <ProjectReference Include="..\Modeling.Application\Modeling.Application.csproj" />
-        <ProjectReference Include="..\GlobalShopSolutions.FinanceAndAccounting.Infrastructure\GlobalShopSolutions.FinanceAndAccounting.Infrastructure.csproj" />
-        <ProjectReference Include="..\Module.Installer\Module.Installer.csproj" />
+        <ProjectReference Include="..\GlobalShopSolutions.Server.AccountsReceivable.Infrastructure\GlobalShopSolutions.Server.AccountsReceivable.Infrastructure.csproj" />
     </ItemGroup>
 </Project>

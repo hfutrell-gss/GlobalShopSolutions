@@ -1,7 +1,7 @@
+using GlobalShopSolutions.Server.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Modeling.Application.Cqrs.Commands;
 using Modeling.Application.Tests.Unit.Commands.TestApplication;
-using Module.Installer;
 using Tests.XunitHelpers;
 using Truss.Monads.Results;
 

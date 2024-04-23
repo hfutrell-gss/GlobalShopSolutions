@@ -1,7 +1,7 @@
+using GlobalShopSolutions.Server.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Modeling.Domain.Events;
 using Modeling.Domain.Tests.Unit.Entities.TestDomain;
-using Module.Installer;
 
 #pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
 

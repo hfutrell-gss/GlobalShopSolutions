@@ -39,10 +39,10 @@
     </ItemGroup>
     
     <ItemGroup>
+      <ProjectReference Include="..\GlobalShopSolutions.Server.Infrastructure\GlobalShopSolutions.Server.Infrastructure.csproj" />
       <ProjectReference Include="..\Modeling.Application\Modeling.Application.csproj" />
       <ProjectReference Include="..\Modeling.Domain\Modeling.Domain.csproj" />
       <ProjectReference Include="..\Modeling.Infrastructure\Modeling.Infrastructure.csproj" />
-      <ProjectReference Include="..\Module.Installer\Module.Installer.csproj" />
       <ProjectReference Include="..\Tests.XunitHelpers\Tests.XunitHelpers.csproj" />
     </ItemGroup>
 </Project>
