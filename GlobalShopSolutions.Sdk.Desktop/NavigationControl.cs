@@ -1,4 +1,4 @@
-﻿namespace GlobalShopSolutions.Sdk.Ui;
+﻿namespace GlobalShopSolutions.Sdk.Desktop;
 
 public abstract class NavigationControl : UserControl
 {

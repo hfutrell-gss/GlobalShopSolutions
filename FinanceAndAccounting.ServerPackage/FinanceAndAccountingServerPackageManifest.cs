@@ -2,10 +2,10 @@
 using Microsoft.Extensions.DependencyInjection;
 using Modeling.Infrastructure;
 
-namespace FinanceAndAccounting.ServerPackageInstaller;
+namespace FinanceAndAccounting.ServerPackage;
 
 /// <inheritdoc />
-public class FinanceAndAccountingServerPackageManifest 
+public sealed class FinanceAndAccountingServerPackageManifest 
     : IServerPackageManifest
 {
     /// <inheritdoc />

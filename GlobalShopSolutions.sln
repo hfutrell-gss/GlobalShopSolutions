@@ -48,7 +48,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalShopSolutions.Infrast
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountsReceivable.Desktop", "AccountsReceivable.Desktop\AccountsReceivable.Desktop.csproj", "{EC21CC38-17EE-4647-B4B6-E9D51A310B04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalShopSolutions.Sdk", "GlobalShopSolutions.Sdk\GlobalShopSolutions.Sdk.csproj", "{9AFD5EC0-2F58-41DE-A495-78A975BE3AAC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalShopSolutions.Client.Sdk", "GlobalShopSolutions.Client.Sdk\GlobalShopSolutions.Client.Sdk.csproj", "{9AFD5EC0-2F58-41DE-A495-78A975BE3AAC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Areas", "Areas", "{B8700693-BC98-447A-9346-FF5B98F41289}"
 EndProject
@@ -76,7 +76,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{A922
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E4A08773-E56D-40EB-B233-BF6274798ADB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceAndAccounting.ServerPackageInstaller", "FinanceAndAccounting.ServerPackageInstaller\FinanceAndAccounting.ServerPackageInstaller.csproj", "{806DFBDB-DAEB-482C-AC7F-719CB6EF6C40}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceAndAccounting.ServerPackage", "FinanceAndAccounting.ServerPackage\FinanceAndAccounting.ServerPackage.csproj", "{806DFBDB-DAEB-482C-AC7F-719CB6EF6C40}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountsReceivable.Endpoints", "AccountsReceivable.Endpoints\AccountsReceivable.Endpoints.csproj", "{9F8235F7-AC78-4734-9A4E-C93B84836FF2}"
 EndProject

@@ -1,4 +1,6 @@
-﻿namespace GlobalShopSolutions.Sdk.Ui;
+﻿using GlobalShopSolutions.Client.Sdk;
+
+namespace GlobalShopSolutions.Sdk.Desktop;
 
 public abstract class PageControl : UserControl
 {
@@ -6,8 +8,8 @@ public abstract class PageControl : UserControl
     public abstract string Description { get; }
     
     public virtual Action? OnSave { get; } = null;
-    
 
+    
     private readonly List<NavigationControl> _navigationControls = new();
     public IReadOnlyCollection<NavigationControl> Navigations => _navigationControls;
     

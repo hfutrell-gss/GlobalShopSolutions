@@ -1,4 +1,4 @@
-﻿namespace GlobalShopSolutions.Sdk;
+﻿namespace GlobalShopSolutions.Client.Sdk;
 
 public interface IFunction
 {

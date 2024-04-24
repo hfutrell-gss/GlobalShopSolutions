@@ -17,7 +17,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\GlobalShopSolutions.Sdk\GlobalShopSolutions.Sdk.csproj" />
+      <ProjectReference Include="..\GlobalShopSolutions.Client.Sdk\GlobalShopSolutions.Client.Sdk.csproj" />
     </ItemGroup>
 
 </Project>

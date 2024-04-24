@@ -14,4 +14,5 @@ public interface IDesktopPackageManifest
         IServiceCollection services,
         IConfiguration configuration
     );
+    
 }

@@ -19,6 +19,8 @@ static class Program
                 .AddLogging(c => c.AddConsole())
                 .AddGlobalShopSolutionsDesktop(null)
             ;
+
+        Start();
     }
 
     static void Start()

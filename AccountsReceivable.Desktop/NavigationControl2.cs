@@ -1,5 +1,4 @@
-﻿using GlobalShopSolutions.Sdk;
-using GlobalShopSolutions.Sdk.Desktop;
+﻿using GlobalShopSolutions.Sdk.Desktop;
 
 namespace AccountsReceivable.Desktop;
 
