@@ -13,8 +13,6 @@ public sealed class QueryTests
     public QueryTests()
     {
         _serviceProvider = new ServiceCollection()
-                .AddMediatR(c => 
-                    c.RegisterServicesFromAssemblies([typeof(ThingStore).Assembly]))
                 .InstallModules(null, set => 
                     set.Add<ApplicationTestModuleInstaller>()
                 )

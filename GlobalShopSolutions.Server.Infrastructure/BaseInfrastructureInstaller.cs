@@ -12,11 +12,10 @@ using Modeling.Infrastructure;
 
 namespace GlobalShopSolutions.Server.Infrastructure;
 
-/// <summary>
-/// 
-/// </summary>
+/// <inheritdoc />
 public sealed class BaseInfrastructureInstaller : IModuleInstaller
 {
+    /// <inheritdoc />
     public void Install(IServiceCollection services, IConfiguration configuration)
     {
         services

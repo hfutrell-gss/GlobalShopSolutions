@@ -114,8 +114,6 @@ public sealed class AggregateRootAndEntityTests
     public AggregateRootAndEntityTests()
     {
         _services = new ServiceCollection()
-                .AddMediatR(c => 
-                    c.RegisterServicesFromAssemblies([typeof(WordUpdatedEvent).Assembly]))
                 .InstallModules(null, set => 
                     set.Add<DomainTestModuleInstaller>()
                 )

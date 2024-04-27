@@ -14,8 +14,6 @@ public sealed class CommandTests
     public CommandTests()
     {
         var serviceProvider = new ServiceCollection()
-                .AddMediatR(c => 
-                    c.RegisterServicesFromAssemblies([typeof(AddValueCommand).Assembly]))
                 .InstallModules(
                     null,
                     set => set.Add<ApplicationTestModuleInstaller>()

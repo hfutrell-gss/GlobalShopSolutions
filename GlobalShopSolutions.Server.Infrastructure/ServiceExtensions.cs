@@ -1,9 +1,13 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using AccountsReceivable.Infrastructure;
+using Tests.Infrastructure.InMemory;
 
 namespace GlobalShopSolutions.Server.Infrastructure;
 
+/// <summary>
+/// 
+/// </summary>
 public static class ServiceExtensions
 {
     public static IServiceCollection AddGlobalShopSolutionsServer(
@@ -30,7 +34,10 @@ public static class ServiceExtensions
                 services,
                 configuration
             ).InstallModulesFromSet(modules)
-            .InstallModulesFromSet(set => set.Add<BaseInfrastructureInstaller>())
+            .InstallModulesFromSet(set => 
+                set.Add<BaseInfrastructureInstaller>()
+                    .Add<InMemoryInfrastructure>()
+            )
             .AddGlobalMappings();
 
         return services;

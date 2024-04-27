@@ -29,6 +29,13 @@ internal sealed class ModuleInstallerAgent
         var moduleInstallerSet = new ModuleInstallerSet();
 
         moduleInstallerSetBuilder(moduleInstallerSet);
+
+        var assemblies = moduleInstallerSet.GetModuleTypes()
+            .Select(moduleType => moduleType.Assembly)
+            .ToArray();
+
+        _services.AddMediatR(c =>
+            c.RegisterServicesFromAssemblies(assemblies));
         
         _types = moduleInstallerSet.GetModuleTypes()
                 .SelectMany(moduleType => moduleType
