@@ -14,7 +14,7 @@ public sealed class QueryTests
     {
         _serviceProvider = new ServiceCollection()
                 .InstallModules(null, set => 
-                    set.Add<ApplicationTestModuleInstaller>()
+                    set.AddInstaller<ApplicationTestModuleInstaller>()
                 )
                 .BuildServiceProvider()
             ;

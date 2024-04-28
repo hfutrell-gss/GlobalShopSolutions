@@ -1,3 +1,5 @@
+using System.Reflection;
+using FastEndpoints;
 using GlobalShopSolutions.Server.Infrastructure.EventSourcing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,6 +11,7 @@ internal sealed class ModuleInstallerAgent
 {
     private readonly IServiceCollection _services;
     private readonly IConfiguration _configuration;
+    private readonly List<Assembly> _assemblies = new();
     private readonly ChangeEventTypeMap _changeEventTypeMap = new();
     
     private Type[]? _types;
@@ -29,33 +32,41 @@ internal sealed class ModuleInstallerAgent
         var moduleInstallerSet = new ModuleInstallerSet();
 
         moduleInstallerSetBuilder(moduleInstallerSet);
-
-        var assemblies = moduleInstallerSet.GetModuleTypes()
-            .Select(moduleType => moduleType.Assembly)
-            .ToArray();
-
-        _services.AddMediatR(c =>
-            c.RegisterServicesFromAssemblies(assemblies));
         
-        _types = moduleInstallerSet.GetModuleTypes()
-                .SelectMany(moduleType => moduleType
-                        .Assembly
-                        .GetTypes())
+        _assemblies.AddRange(moduleInstallerSet.GetEndpointAssemblies());
+
+        var assemblies = moduleInstallerSet.GetServiceAssemblies();
+        
+        _assemblies.AddRange(assemblies);
+
+        _types = assemblies.SelectMany(assembly => assembly.GetTypes())
                 .ToArray()
             ;
         
         _changeEventTypeMap.Add(_types);
 
-        InvokeAll<IModuleInstaller>(installer => installer.Install(_services, _configuration));
+        InvokeAll<IModuleInstaller>(installer =>
+        {
+            installer.Install(_services, _configuration);
+        });
         return this;
     }
 
     /// <summary>
     /// Must be invoked after installing modules
     /// </summary>
-    public void AddGlobalMappings()
+    public void FinalizeGlobalResolvers()
     {
-        _services.AddSingleton(_changeEventTypeMap);
+        var assemblies = _assemblies.ToArray();
+        
+        _services.AddSingleton(_changeEventTypeMap)
+            .AddMediatR(c =>
+                c.RegisterServicesFromAssemblies(assemblies))
+            .AddFastEndpoints(o =>
+                o.Assemblies = assemblies
+            )
+            ;
+         
     }
     
     private void InvokeAll<T>(Action<T> func)

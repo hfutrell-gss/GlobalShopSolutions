@@ -81,8 +81,8 @@ public sealed class EventSourcingTests
     private readonly IServiceProvider _serviceProvider = new ServiceCollection()
             .InstallModules(
                 null,
-                set => set.Add<ApplicationTestModuleInstaller>()
-                    .Add<InMemoryInfrastructure>()
+                set => set.AddInstaller<ApplicationTestModuleInstaller>()
+                    .AddInstaller<InMemoryInfrastructure>()
                 )
 
             .BuildServiceProvider()

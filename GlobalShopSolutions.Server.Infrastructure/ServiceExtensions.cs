@@ -1,12 +1,14 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using AccountsReceivable.Infrastructure;
+using FinanceAndAccounting.ServerPackage;
+using Modeling.Infrastructure;
 using Tests.Infrastructure.InMemory;
 
 namespace GlobalShopSolutions.Server.Infrastructure;
 
 /// <summary>
-/// 
+///
 /// </summary>
 public static class ServiceExtensions
 {
@@ -15,10 +17,20 @@ public static class ServiceExtensions
         IConfiguration configuration
     )
     {
+        IServicePackage[] servicePackages =
+        [
+            new FinanceAndAccountingServicePackage()
+        ];
+        
         services.InstallModules(
-            configuration, 
-            set => set
-                .Add<AccountingModuleInstaller>()
+            configuration,
+            set =>
+            {
+                servicePackages
+                    .Select(package => package.Install(set))
+                    .ToList();
+                set.AddInstaller<AccountingModuleInstaller>();
+            }
         );
         
         return services;
@@ -35,10 +47,10 @@ public static class ServiceExtensions
                 configuration
             ).InstallModulesFromSet(modules)
             .InstallModulesFromSet(set => 
-                set.Add<BaseInfrastructureInstaller>()
-                    .Add<InMemoryInfrastructure>()
+                set.AddInstaller<BaseInfrastructureInstaller>()
+                    .AddInstaller<InMemoryInfrastructure>()
             )
-            .AddGlobalMappings();
+            .FinalizeGlobalResolvers();
 
         return services;
     }

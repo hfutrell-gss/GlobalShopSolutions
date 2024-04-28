@@ -5,14 +5,18 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="FastEndpoints" Version="5.*" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="[8, )" />
         <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="[8, )" />
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\FinanceAndAccounting.ServerPackage\FinanceAndAccounting.ServerPackage.csproj" />
         <ProjectReference Include="..\GlobalShopSolutions.Server.Sdk\GlobalShopSolutions.Server.Sdk.csproj" />
         <ProjectReference Include="..\Modeling.Application\Modeling.Application.csproj" />
         <ProjectReference Include="..\AccountsReceivable.Infrastructure\AccountsReceivable.Infrastructure.csproj" />
+        <ProjectReference Include="..\Modeling.Endpoints\Modeling.Endpoints.csproj" />
         <ProjectReference Include="..\Tests.Infrastructure.InMemory\Tests.Infrastructure.InMemory.csproj" />
     </ItemGroup>
+
 </Project>

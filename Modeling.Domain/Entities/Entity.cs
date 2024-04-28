@@ -1,5 +1,6 @@
 namespace Modeling.Domain.Entities;
 
+
 /// <summary>
 /// Base object in DDD
 /// An entity with a strongly typed identifier

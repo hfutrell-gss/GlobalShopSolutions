@@ -6,4 +6,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\AccountsReceivable.Domain\AccountsReceivable.Domain.csproj" />
+      <ProjectReference Include="..\Modeling.Endpoints\Modeling.Endpoints.csproj" />
+    </ItemGroup>
+
 </Project>
