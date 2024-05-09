@@ -1,6 +1,5 @@
 using GlobalShopSolutions.Server.Infrastructure.Buses;
 using GlobalShopSolutions.Server.Infrastructure.EventSourcing;
-using GlobalShopSolutions.Server.Infrastructure.Routes;
 using GlobalShopSolutions.Server.Sdk.Integrations;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,16 +8,16 @@ using Modeling.Application.Cqrs.EventSourcing.Reading;
 using Modeling.Application.Cqrs.EventSourcing.Writing;
 using Modeling.Application.Cqrs.Queries;
 using Modeling.Domain.Events;
-using Modeling.Endpoints;
 using Modeling.Infrastructure;
 
 namespace GlobalShopSolutions.Server.Infrastructure;
 
 /// <inheritdoc />
-public sealed class BaseInfrastructureInstaller : IModuleInstaller
+public sealed class SharedInfrastructureModuleInstaller 
+    : IModuleInstaller
 {
     /// <inheritdoc />
-    public void Install(IServiceCollection services, IConfiguration configuration)
+    public void InstallServices(IServiceCollection services, IConfiguration configuration)
     {
         services
             .AddTransient<IDomainEventDispatcher, DomainEventDispatcher>()
@@ -30,7 +29,6 @@ public sealed class BaseInfrastructureInstaller : IModuleInstaller
             .AddSingleton<ChangeEventDeserializer>()
             .AddTransient<IAggregateEventStreamWriter, AggregateEventStreamWriter>()
             .AddTransient<IAggregateEventStreamReader, AggregateEventStreamReader>()
-            .AddTransient<IRouteFactory, RouteFactory>()
             ;
     }
 }

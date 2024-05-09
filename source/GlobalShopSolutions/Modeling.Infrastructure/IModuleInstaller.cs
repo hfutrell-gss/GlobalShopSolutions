@@ -5,8 +5,9 @@ namespace Modeling.Infrastructure;
 
 public interface IModuleInstaller
 {
-    public void Install(
+    public void InstallServices(
         IServiceCollection services,
         IConfiguration configuration
     );
+
 }

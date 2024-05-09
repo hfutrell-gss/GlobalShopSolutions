@@ -1,6 +1,6 @@
 using Modeling.Domain.Entities;
 
-namespace Modeling.Application.Tests.TestCore.Domain;
+namespace Modeling.Application.Tests.EfCore.Domain;
 
 public sealed record AutoShopId 
     : AggregateRootId<Guid>

@@ -1,5 +1,3 @@
-using Modeling.Endpoints;
-
 namespace AccountsReceivable.Endpoints;
 
 public sealed class AccountResponse
@@ -13,5 +11,3 @@ public sealed class AccountResponse
         Id = id;
     }
 }
-
-public sealed class AccountsReceivableEndpointAssemblyMarker : IEndpointAssemblyMarker;

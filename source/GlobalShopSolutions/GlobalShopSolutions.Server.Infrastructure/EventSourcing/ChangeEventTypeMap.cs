@@ -1,3 +1,4 @@
+using System.Reflection;
 using Modeling.Application.Cqrs.EventSourcing.Events;
 using Modeling.Domain.EventSourcing;
 
@@ -8,15 +9,19 @@ public sealed class ChangeEventTypeMap
     private readonly Dictionary<EventType, Type> _map = new();
     private readonly Dictionary<Type, EventType> _coMap = new();
 
-    public void Add(Type[] types)
+    public ChangeEventTypeMap(List<Assembly> serviceAssemblies)
     {
-         types
-             .Where(type => typeof(IChangeEvent).IsAssignableFrom(type))
-             .ToList()
-             .ForEach(Add)
-             ;       
+        var types = serviceAssemblies
+            .SelectMany(a => a.GetTypes())
+            .Where(type => typeof(IChangeEvent).IsAssignableFrom(type))
+            .ToList()
+            ;
+        
+        types
+            .ForEach(Add)
+            ;       
     }
-    
+
     private void Add(Type t)
     {
         _map.Add(t, t);

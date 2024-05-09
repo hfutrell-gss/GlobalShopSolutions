@@ -4,7 +4,6 @@ using Modeling.Application.Cqrs.EventSourcing.Reading;
 using Modeling.Application.Cqrs.EventSourcing.Writing;
 using Modeling.Application.Tests.Unit.EventSourcing.TestApplication;
 using Modeling.Domain.Events;
-using Tests.Infrastructure.InMemory;
 
 namespace Modeling.Application.Tests.Unit.EventSourcing;
 
@@ -79,10 +78,9 @@ public sealed class EventSourcingTests
     }
 
     private readonly IServiceProvider _serviceProvider = new ServiceCollection()
-            .InstallModules(
+            .InstallAreas(
                 null,
-                set => set.AddModuleInstaller<ApplicationTestModuleInstaller>()
-                    .AddModuleInstaller<InMemoryInfrastructure>()
+                set => set.InstallArea<ApplicationTestModuleInstaller>()
                 )
 
             .BuildServiceProvider()

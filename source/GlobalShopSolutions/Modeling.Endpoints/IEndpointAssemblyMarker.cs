@@ -1,6 +1,6 @@
 namespace Modeling.Endpoints;
 
 /// <summary>
-/// Used to point to an assembly for scanning
+/// Marks an assembly to be scanned for endpoint implementations
 /// </summary>
 public interface IEndpointAssemblyMarker;

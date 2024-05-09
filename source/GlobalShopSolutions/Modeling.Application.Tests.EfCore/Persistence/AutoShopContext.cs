@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Modeling.Application.Tests.TestCore.Domain;
+using Modeling.Application.Tests.EfCore.Domain;
 
 namespace Modeling.Application.Tests.EfCore.Persistence;
 

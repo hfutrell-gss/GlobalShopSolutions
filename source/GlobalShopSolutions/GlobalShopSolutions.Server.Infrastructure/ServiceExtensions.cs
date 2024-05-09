@@ -1,10 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using AccountsReceivable.Infrastructure;
 using FastEndpoints;
 using FinanceAndAccounting.ServerPackage;
 using Microsoft.AspNetCore.Builder;
-using Modeling.Infrastructure;
 using Tests.Infrastructure.InMemory;
 
 namespace GlobalShopSolutions.Server.Infrastructure;
@@ -14,51 +12,43 @@ namespace GlobalShopSolutions.Server.Infrastructure;
 /// </summary>
 public static class ServiceExtensions
 {
-    public static IServiceCollection AddGlobalShopSolutionsServer(
+    public static void AddGlobalShopSolutionsServer(
         this IServiceCollection services,
         IConfiguration configuration
     )
     {
-        IServicePackage[] servicePackages =
-        [
-            new FinanceAndAccountingServicePackage()
-        ];
-        
-        services.InstallModules(
+        services.InstallAreas(
             configuration,
-            set =>
-            {
-                servicePackages
-                    .Select(package => package.Install(set))
-                    .ToList();
-                set.AddModuleInstaller<AccountingModuleInstaller>();
-            }
+            installation: installer => installer
+                .InstallArea<FinanceAndAccountingAreaInstaller>()
         );
-        
-        return services;
     }
 
-    public static IServiceCollection InstallModules(
+    public static IServiceCollection InstallAreas(
         this IServiceCollection services,
         IConfiguration configuration,
-        Action<ModuleInstallerSet> modules
+        Action<ServiceInstaller> installation
     )
     {
-        new ModuleInstaller(
-                services,
-                configuration
-            ).InstallModulesFromSet(modules)
-            .InstallModulesFromSet(set => 
-                set.AddModuleInstaller<BaseInfrastructureInstaller>()
-                    .AddModuleInstaller<InMemoryInfrastructure>()
-            )
-            .FinalizeGlobalResolvers();
+        var installer = new ServiceInstaller(
+            services, configuration
+        );
+        
+        new SharedInfrastructureModuleInstaller()
+            .InstallServices(services, configuration);
+        
+        new InMemoryInfrastructureModuleInstaller()
+            .InstallServices(services, configuration);
+        
+        installation(installer);
 
+        installer.FinalizeGlobalResolvers();
+        
         return services;
     }
 
-    public static IApplicationBuilder UseGlobalShopSolutions(this IApplicationBuilder builder)
+    public static void UseGlobalShopSolutions(this IApplicationBuilder builder)
     {
-        return builder.UseFastEndpoints();
+        builder.UseFastEndpoints();
     }
 }

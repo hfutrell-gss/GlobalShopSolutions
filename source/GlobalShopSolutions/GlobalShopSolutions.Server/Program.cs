@@ -14,7 +14,6 @@ builder.Services.AddGlobalShopSolutionsServer(
 
 var app = builder.Build();
 
-
 app.UseHttpsRedirection();
 
 app.UseGlobalShopSolutions();

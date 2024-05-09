@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Modeling.Application.Tests.TestCore.Domain;
+using Modeling.Application.Tests.EfCore.Domain;
 
 namespace Modeling.Application.Tests.EfCore.Persistence;
 

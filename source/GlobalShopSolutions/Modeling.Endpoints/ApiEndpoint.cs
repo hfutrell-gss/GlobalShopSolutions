@@ -9,16 +9,16 @@ public abstract class ApiEndpoint<TResponse>
     : EndpointWithoutRequest<TResponse>,
         IRoutable where TResponse : notnull
 {
-    private readonly IRouteFactory _routeFactory;
+    private readonly IEndpointRouteFactory _endpointRouteFactory;
 
-    protected ApiEndpoint(IRouteFactory routeFactory)
+    protected ApiEndpoint(IEndpointRouteFactory endpointRouteFactory)
     {
-        _routeFactory = routeFactory;
+        _endpointRouteFactory = endpointRouteFactory;
     }
     
     public sealed override void Configure()
     {
-        Get(_routeFactory.GetRoute(this, "Get"));
+        Get(_endpointRouteFactory.GetRoute(this, "Get"));
         AllowAnonymous();
     }
 

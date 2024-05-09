@@ -13,8 +13,8 @@ public sealed class QueryTests
     public QueryTests()
     {
         _serviceProvider = new ServiceCollection()
-                .InstallModules(null, set => 
-                    set.AddModuleInstaller<ApplicationTestModuleInstaller>()
+                .InstallAreas(null, set => 
+                    set.InstallArea<ApplicationTestModuleInstaller>()
                 )
                 .BuildServiceProvider()
             ;

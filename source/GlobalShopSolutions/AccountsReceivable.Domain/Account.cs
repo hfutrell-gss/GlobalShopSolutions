@@ -8,13 +8,29 @@ namespace AccountsReceivable.Domain;
 public sealed class Account : Entity<Guid>
 {
     public string? Name { get; private set; }
-    
-    public Account(Guid id) : base(id)
+
+    private Account() : this(Guid.NewGuid())
     {
+        
+    }
+
+    private Account(Guid id) : base(id)
+    {
+    }
+    
+    public static Account New(string commandName)
+    {
+        return new Account();
+    }
+
+    public static Account From(Guid id)
+    {
+        return new Account(id);
     }
 
     public void SetName(string name)
     {
         Name = name;
     }
+    
 }

@@ -5,7 +5,7 @@ namespace AccountsReceivable.Endpoints;
 public class GetAccountApiEndpoint 
     : ApiEndpoint<AccountResponse>
 {
-    public GetAccountApiEndpoint(IRouteFactory routeFactory) : base(routeFactory)
+    public GetAccountApiEndpoint(IEndpointRouteFactory endpointRouteFactory) : base(endpointRouteFactory)
     {
     }
 

@@ -1,5 +1,5 @@
+using Modeling.Application.Tests.EfCore.Domain;
 using Modeling.Application.Tests.EfCore.Persistence;
-using Modeling.Application.Tests.TestCore.Domain;
 using Truss.Monads.Results;
 
 namespace Modeling.Application.Tests.EfCore;

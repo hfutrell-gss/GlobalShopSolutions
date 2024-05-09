@@ -14,9 +14,9 @@ public sealed class CommandTests
     public CommandTests()
     {
         var serviceProvider = new ServiceCollection()
-                .InstallModules(
+                .InstallAreas(
                     null,
-                    set => set.AddModuleInstaller<ApplicationTestModuleInstaller>()
+                    set => set.InstallArea<ApplicationTestModuleInstaller>()
                     )
                 .BuildServiceProvider()
             ;

@@ -114,8 +114,8 @@ public sealed class AggregateRootAndEntityTests
     public AggregateRootAndEntityTests()
     {
         _services = new ServiceCollection()
-                .InstallModules(null, set => 
-                    set.AddModuleInstaller<DomainTestModuleInstaller>()
+                .InstallAreas(null, set => 
+                    set.InstallArea<DomainTestAreaInstaller>()
                 )
                 .BuildServiceProvider()
             ;

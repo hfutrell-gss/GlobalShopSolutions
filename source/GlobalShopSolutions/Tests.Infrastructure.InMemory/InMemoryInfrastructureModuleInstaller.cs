@@ -6,10 +6,10 @@ using Tests.Infrastructure.InMemory.Events;
 
 namespace Tests.Infrastructure.InMemory;
 
-public sealed class InMemoryInfrastructure 
+public sealed class InMemoryInfrastructureModuleInstaller 
     : IModuleInstaller
 {
-    public void Install(
+    public void InstallServices(
         IServiceCollection services,
         IConfiguration configuration
     )
