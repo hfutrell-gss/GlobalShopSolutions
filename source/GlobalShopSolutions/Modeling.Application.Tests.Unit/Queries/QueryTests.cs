@@ -1,4 +1,5 @@
 using GlobalShopSolutions.Server.Infrastructure;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Modeling.Application.Cqrs.Queries;
 using Modeling.Application.Tests.Unit.Queries.TestApplication;
@@ -13,7 +14,7 @@ public sealed class QueryTests
     public QueryTests()
     {
         _serviceProvider = new ServiceCollection()
-                .InstallAreas(null, set => 
+                .InstallAreas(new ConfigurationManager(), set => 
                     set.InstallArea<ApplicationTestModuleInstaller>()
                 )
                 .BuildServiceProvider()

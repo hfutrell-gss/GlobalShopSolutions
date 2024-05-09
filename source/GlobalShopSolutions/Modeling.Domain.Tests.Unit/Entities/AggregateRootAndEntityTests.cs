@@ -1,4 +1,5 @@
 using GlobalShopSolutions.Server.Infrastructure;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Modeling.Domain.Events;
 using Modeling.Domain.Tests.Unit.Entities.TestDomain;
@@ -114,7 +115,9 @@ public sealed class AggregateRootAndEntityTests
     public AggregateRootAndEntityTests()
     {
         _services = new ServiceCollection()
-                .InstallAreas(null, set => 
+                .InstallAreas(
+                    new ConfigurationManager(),
+                    set => 
                     set.InstallArea<DomainTestAreaInstaller>()
                 )
                 .BuildServiceProvider()

@@ -72,7 +72,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{A922
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E4A08773-E56D-40EB-B233-BF6274798ADB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceAndAccounting.ServerPackage", "FinanceAndAccounting.ServerPackage\FinanceAndAccounting.ServerPackage.csproj", "{806DFBDB-DAEB-482C-AC7F-719CB6EF6C40}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceAndAccounting.Installation", "FinanceAndAccounting.Installation\FinanceAndAccounting.Installation.csproj", "{806DFBDB-DAEB-482C-AC7F-719CB6EF6C40}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountsReceivable.Endpoints", "AccountsReceivable.Endpoints\AccountsReceivable.Endpoints.csproj", "{9F8235F7-AC78-4734-9A4E-C93B84836FF2}"
 EndProject

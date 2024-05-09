@@ -1,4 +1,5 @@
 using GlobalShopSolutions.Server.Infrastructure;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Modeling.Application.Cqrs.EventSourcing.Reading;
 using Modeling.Application.Cqrs.EventSourcing.Writing;
@@ -79,7 +80,7 @@ public sealed class EventSourcingTests
 
     private readonly IServiceProvider _serviceProvider = new ServiceCollection()
             .InstallAreas(
-                null,
+                new ConfigurationManager(),
                 set => set.InstallArea<ApplicationTestModuleInstaller>()
                 )
 

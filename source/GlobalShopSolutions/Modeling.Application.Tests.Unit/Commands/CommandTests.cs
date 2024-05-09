@@ -1,4 +1,5 @@
 using GlobalShopSolutions.Server.Infrastructure;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Modeling.Application.Cqrs.Commands;
 using Modeling.Application.Tests.Unit.Commands.TestApplication;
@@ -15,7 +16,7 @@ public sealed class CommandTests
     {
         var serviceProvider = new ServiceCollection()
                 .InstallAreas(
-                    null,
+                    new ConfigurationManager(),
                     set => set.InstallArea<ApplicationTestModuleInstaller>()
                     )
                 .BuildServiceProvider()

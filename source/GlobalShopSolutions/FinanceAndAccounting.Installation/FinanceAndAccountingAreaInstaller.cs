@@ -1,7 +1,7 @@
 ﻿using AccountsReceivable.Infrastructure;
 using Modeling.Areas.Installation;
 
-namespace FinanceAndAccounting.ServerPackage;
+namespace FinanceAndAccounting.Installation;
 
 /// <inheritdoc />
 public sealed class FinanceAndAccountingAreaInstaller 

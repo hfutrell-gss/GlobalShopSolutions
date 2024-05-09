@@ -8,10 +8,13 @@
         <PackageReference Include="FastEndpoints" Version="5.*" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="[8, )" />
         <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="[8, )" />
+        <PackageReference Include="Serilog" Version="3.1.1" />
+        <PackageReference Include="Serilog.Settings.Configuration" Version="8.0.0" />
+        <PackageReference Include="Serilog.Sinks.Console" Version="5.0.1" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\FinanceAndAccounting.ServerPackage\FinanceAndAccounting.ServerPackage.csproj" />
+        <ProjectReference Include="..\FinanceAndAccounting.Installation\FinanceAndAccounting.Installation.csproj" />
         <ProjectReference Include="..\GlobalShopSolutions.Server.Sdk\GlobalShopSolutions.Server.Sdk.csproj" />
         <ProjectReference Include="..\Modeling.Application\Modeling.Application.csproj" />
         <ProjectReference Include="..\AccountsReceivable.Infrastructure\AccountsReceivable.Infrastructure.csproj" />

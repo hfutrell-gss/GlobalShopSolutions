@@ -2,10 +2,10 @@
 
 namespace AccountsReceivable.Endpoints;
 
-public class GetAccountApiEndpoint 
-    : ApiEndpoint<AccountResponse>
+public class GetAccountGetResourceEndpoint 
+    : GetResourceEndpoint<AccountResponse>
 {
-    public GetAccountApiEndpoint(IEndpointRouteFactory endpointRouteFactory) : base(endpointRouteFactory)
+    public GetAccountGetResourceEndpoint(IEndpointRouteFactory endpointRouteFactory) : base(endpointRouteFactory)
     {
     }
 

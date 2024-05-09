@@ -4,14 +4,13 @@ namespace Modeling.Endpoints;
 
 public interface IRoutable;
 
-
-public abstract class ApiEndpoint<TResponse> 
+public abstract class GetResourceEndpoint<TResponse> 
     : EndpointWithoutRequest<TResponse>,
         IRoutable where TResponse : notnull
 {
     private readonly IEndpointRouteFactory _endpointRouteFactory;
 
-    protected ApiEndpoint(IEndpointRouteFactory endpointRouteFactory)
+    protected GetResourceEndpoint(IEndpointRouteFactory endpointRouteFactory)
     {
         _endpointRouteFactory = endpointRouteFactory;
     }

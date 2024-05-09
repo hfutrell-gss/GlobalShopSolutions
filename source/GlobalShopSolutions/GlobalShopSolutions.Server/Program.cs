@@ -1,6 +1,15 @@
 using GlobalShopSolutions.Server.Infrastructure;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog();
+
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .CreateLogger();
+
+builder.Logging.AddSerilog();
 
 builder.Services.AddAuthentication();
 builder.Services.AddAuthorization();
