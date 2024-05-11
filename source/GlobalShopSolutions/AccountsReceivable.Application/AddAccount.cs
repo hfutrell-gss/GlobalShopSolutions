@@ -1,16 +1,27 @@
 using AccountsReceivable.Domain;
+using FluentValidation;
 using Modeling.Application.Cqrs.Commands;
 using Modeling.Application.Cqrs.Queries;
 using Truss.Monads.Results;
 
 namespace AccountsReceivable.Application;
 
-public class AddAccount : ICommand<Guid>
+public sealed class AddAccount : ICommand<Guid>
 {
-    public string Name { get; set; }
+    public required string Name { get; init; }
 }
 
-public class AddAccountHandler : ICommandHandler<AddAccount, Guid>
+public sealed class AddAccountValidator : AbstractValidator<AddAccount>
+{
+    public AddAccountValidator()
+    {
+        RuleFor(a => a.Name)
+                .Length(3, 24)
+            ;
+    }
+}
+
+public sealed class AddAccountHandler : ICommandHandler<AddAccount, Guid>
 {
     private readonly IAccountWriteRepository _accountWriteRepository;
 
@@ -32,20 +43,27 @@ public interface IAccountWriteRepository
     Task<Result<Guid>> Add(Account account);
 }
 
-public record GetAccount : IQuery<AccountInfo>
+public sealed record GetAccountRequest : IQuery<AccountInfo>
 {
     public Guid Id { get; set; }    
 }
 
-public class GetAccountHandler : IQueryHandler<GetAccount, AccountInfo>
+public class GetAccountHandler : IQueryHandler<GetAccountRequest, AccountInfo>
 {
-    public Task<Result<AccountInfo>> Handle(GetAccount request, CancellationToken cancellationToken)
+    public Task<Result<AccountInfo>> Handle(GetAccountRequest request, CancellationToken cancellationToken)
     {
-        return Task.FromResult(Result.Success(new AccountInfo()));
+        return Task.FromResult(Result.Success(new AccountInfo(Guid.NewGuid().ToString(), Guid.NewGuid())));
     }
 }
 
-public class AccountInfo
+public sealed class AccountInfo
 {
     public string Name { get; }
+    public Guid Id { get;}
+    
+    public AccountInfo(string name, Guid id)
+    {
+        Name = name;
+        Id = id;
+    }
 }

@@ -1,4 +1,5 @@
 using FastEndpoints;
+using FluentValidation;
 using GlobalShopSolutions.Server.Infrastructure.EndpointRouting;
 using GlobalShopSolutions.Server.Infrastructure.EventSourcing;
 using Microsoft.Extensions.Configuration;
@@ -77,7 +78,7 @@ public sealed class ServiceInstaller
         var changeEventMapper = new ChangeEventTypeMap(serviceAssemblies, _logger);
 
         var endpointRouteFactory = new EndpointRouteFactory([.._areas], _logger);
-        
+
         _services.AddSingleton(changeEventMapper)
             .AddSingleton<IEndpointRouteFactory>(endpointRouteFactory)
             ;
@@ -95,6 +96,9 @@ public sealed class ServiceInstaller
                 )
                 ;
         }
+        
+        _logger.Information("Adding validators");
+        _services.AddValidatorsFromAssemblies(serviceAssemblies);
         
         _logger.Information("Global resolvers have been applied");
     }

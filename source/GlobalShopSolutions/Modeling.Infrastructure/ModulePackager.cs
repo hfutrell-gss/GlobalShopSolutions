@@ -48,8 +48,12 @@ public sealed class ModulePackager
         
         moduleInstaller.InstallServices(services, _configuration);
 
-        serviceAssemblies.AddRange(services.Select(s => s
-            .ImplementationType?.Assembly ?? s.ServiceType.Assembly));
+        serviceAssemblies.AddRange(services.SelectMany(s => 
+            new[]
+            {
+                s.ServiceType.Assembly,
+                s.ImplementationType?.Assembly,
+            })!);
         
         foreach (var serviceDescriptor in services)
         {

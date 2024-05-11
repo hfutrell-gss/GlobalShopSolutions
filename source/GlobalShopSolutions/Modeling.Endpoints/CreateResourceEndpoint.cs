@@ -2,14 +2,17 @@ using FastEndpoints;
 
 namespace Modeling.Endpoints;
 
-public abstract class GetResourceEndpoint<TRequest, TResponse> 
+public interface IRoutable;
+
+
+public abstract class CreateResourceEndpoint<TRequest, TResponse> 
     : Endpoint<TRequest, TResponse>,
         IRoutable where TResponse : notnull
 {
     private readonly IEndpointRouteFactory _endpointRouteFactory;
     
 
-    protected GetResourceEndpoint(
+    protected CreateResourceEndpoint(
         IEndpointRouteFactory endpointRouteFactory
     )
     {
@@ -24,5 +27,4 @@ public abstract class GetResourceEndpoint<TRequest, TResponse>
 
     /// <inheritdoc />
     public abstract override Task HandleAsync(TRequest request, CancellationToken ct);
-
 }

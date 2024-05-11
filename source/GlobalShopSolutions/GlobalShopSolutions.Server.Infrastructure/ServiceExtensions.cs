@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using FastEndpoints;
 using FinanceAndAccounting.Installation;
 using Microsoft.AspNetCore.Builder;
+using Modeling.Application.Logging;
 using Serilog;
 using Tests.Infrastructure.InMemory;
 
@@ -38,7 +39,8 @@ public static class ServiceExtensions
                 .ReadFrom.Configuration(configuration)
                 .CreateLogger()
             ;
-            
+
+       
         logger.Information("Installing Global Shop Solutions infrastructure");
         
         logger.Information("Installing shared module infrastructure");
@@ -59,11 +61,16 @@ public static class ServiceExtensions
 
         installer.ApplyGlobalResolvers();
         
+        services.AddLogging();
+        
         return services;
     }
 
     public static void UseGlobalShopSolutions(this IApplicationBuilder builder)
     {
+        var logger = builder.ApplicationServices.GetService<IDiagnosticLogger>()!;
+        
+        logger.Log("Finalizing installation");
         builder.UseFastEndpoints();
     }
 }

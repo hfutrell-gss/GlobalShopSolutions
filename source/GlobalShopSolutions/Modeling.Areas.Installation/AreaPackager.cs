@@ -6,8 +6,6 @@ namespace Modeling.Areas.Installation;
 
 public sealed class AreaPackager
 {
-    private readonly IServiceCollection _services;
-    private readonly IConfiguration _configuration;
     private readonly ModulePackager _modulePackager;
 
     public AreaPackager(
@@ -15,15 +13,13 @@ public sealed class AreaPackager
         IConfiguration configuration
     )
     {
-        _services = services;
-        _configuration = configuration;
         _modulePackager = new ModulePackager(services, configuration);
     }
     
     public Area Package(IAreaInstaller areaInstaller)
     {
         var name = areaInstaller.GetType().Name.Replace("AreaInstaller", "");
-
+        
         var moduleInstallerAggregator = new ModuleInstallerAggregator();
         
         areaInstaller.InstallModules(moduleInstallerAggregator);
@@ -32,7 +28,7 @@ public sealed class AreaPackager
                     _modulePackager.Package(installer))
                 .ToArray()
             ;
-
+        
         return new Area
         {
             Name = name,

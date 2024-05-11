@@ -11,7 +11,7 @@
         <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="[1, )" />
         <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="[1, )" />
         <PackageReference Include="MediatR" Version="[9, )" />
-        <PackageReference Include="Newtonsoft.Json" Version="[4.0.2, )" />
+        <PackageReference Include="Newtonsoft.Json" Version="[12, )" />
     </ItemGroup>
 
     <ItemGroup>

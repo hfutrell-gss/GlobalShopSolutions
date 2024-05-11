@@ -1,3 +1,4 @@
+using FastEndpoints.Swagger;
 using GlobalShopSolutions.Server.Infrastructure;
 using Serilog;
 
@@ -21,6 +22,8 @@ builder.Services.AddGlobalShopSolutionsServer(
     builder.Configuration
 );
 
+builder.Services.AddSwaggerDocument();
+
 var app = builder.Build();
 
 app.UseHttpsRedirection();
@@ -29,6 +32,7 @@ app.UseGlobalShopSolutions();
 
 app.UseSwagger();
 app.UseSwaggerUI();
+app.UseSwaggerGen();
 
 app.MapGet("/", () => "Welcome to the Globe!")
     .WithName("Welcome")

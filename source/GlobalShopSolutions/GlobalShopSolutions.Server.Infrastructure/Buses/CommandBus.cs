@@ -4,9 +4,6 @@ using Truss.Monads.Results;
 
 namespace GlobalShopSolutions.Server.Infrastructure.Buses;
 
-/// <summary>
-/// 
-/// </summary>
 public sealed class CommandBus : ICommandBus
 {
     private readonly IMediator _mediator;

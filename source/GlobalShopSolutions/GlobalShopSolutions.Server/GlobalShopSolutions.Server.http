@@ -1,6 +1,27 @@
-@GlobalShopSolutions.Server_HostAddress = http://localhost:5277
+@Api = http://localhost:5277
+@FinanceAndAccounting = {{Api}}/FinanceAndAccounting
+@AccountsReceivable = {{FinanceAndAccounting}}/AccountsReceivable
 
-GET {{GlobalShopSolutions.Server_HostAddress}}/weatherforecast/
+GET {{AccountsReceivable}}/GetAccountEndpoint/
+Accept: application/json
+
+
+###
+
+POST {{AccountsReceivable}}/AddAccount/
+Content-Type: application/json
+Expect: 200
+
+{
+  "Name": "To"
+}
+
+###
+
+GET {{AccountsReceivable}}/GetAccountEndpoint/{{accountId}}
 Accept: application/json
 
 ###
+
+GET {{AccountsReceivable}}/GetAccou
+Accept: application/json

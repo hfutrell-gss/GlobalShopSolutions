@@ -50,15 +50,21 @@ public sealed class EndpointRouteFactory
 
     private void RegisterEndpoint(string areaName, string moduleName, Type endpointType)
     {
-        var endpoint = $"{areaName}/{moduleName}/{endpointType.Name}/{{id}}";
+        var endpoint = $"{areaName}/{moduleName}/{endpointType.Name.Replace("Endpoint", "")}/";
         
         _logger.Information("Routing {EndpointType} to {Endpoint}", endpointType.Name, endpoint);
         
         _endpoints[endpointType] = endpoint;
     }
 
-    public string[] GetRoute(IRoutable routable, string method)
+    public string[] GetRoute(IRoutable routable)
     {
         return [_endpoints[routable.GetType()]];
+    }
+    
+    public string[] GetRoute<TRoutable>()
+        where TRoutable : IRoutable
+    {
+        return [_endpoints[typeof(TRoutable)]];
     }
 }

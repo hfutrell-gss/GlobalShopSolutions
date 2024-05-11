@@ -7,7 +7,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\AccountsReceivable.Application\AccountsReceivable.Application.csproj" />
       <ProjectReference Include="..\AccountsReceivable.Domain\AccountsReceivable.Domain.csproj" />
+      <ProjectReference Include="..\Modeling.Application\Modeling.Application.csproj" />
       <ProjectReference Include="..\Modeling.Endpoints\Modeling.Endpoints.csproj" />
     </ItemGroup>
 

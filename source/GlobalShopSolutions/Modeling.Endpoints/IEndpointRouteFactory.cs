@@ -1,8 +1,9 @@
-using Modeling.Domain.Entities;
-
 namespace Modeling.Endpoints;
 
 public interface IEndpointRouteFactory
 {
-    public string[] GetRoute(IRoutable routable, string method);
+    public string[] GetRoute(IRoutable routable);
+    public string[] GetRoute<TRoutable>()
+        where TRoutable : IRoutable;
+
 }
