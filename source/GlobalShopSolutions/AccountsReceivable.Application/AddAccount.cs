@@ -1,5 +1,7 @@
 using AccountsReceivable.Domain;
+using AccountsReceivable.Integrations;
 using FluentValidation;
+using GlobalShopSolutions.Server.Sdk.Integrations;
 using Modeling.Application.Cqrs.Commands;
 using Modeling.Application.Cqrs.Queries;
 using Truss.Monads.Results;
@@ -24,18 +26,35 @@ public sealed class AddAccountValidator : AbstractValidator<AddAccount>
 public sealed class AddAccountHandler : ICommandHandler<AddAccount, Guid>
 {
     private readonly IAccountWriteRepository _accountWriteRepository;
+    private readonly IIntegrationBus _integrationBus;
 
-    public AddAccountHandler(IAccountWriteRepository accountWriteRepository)
+    public AddAccountHandler(
+        IAccountWriteRepository accountWriteRepository,
+        IIntegrationBus integrationBus
+    )
     {
         _accountWriteRepository = accountWriteRepository;
+        _integrationBus = integrationBus;
     }
     
     public async Task<Result<Guid>> Handle(AddAccount command, CancellationToken cancellationToken)
     {
         var account = Account.New(command.Name);
+
+        var id = await _accountWriteRepository.Add(account);
         
-        return await _accountWriteRepository.Add(account);
+        await _integrationBus.Publish(
+                    new CreatedSomethingNeat(),
+                    cancellationToken
+                );
+
+        return id;
     }
+}
+
+public interface IUnitOfWork
+{
+    public void Commit();
 }
 
 public interface IAccountWriteRepository

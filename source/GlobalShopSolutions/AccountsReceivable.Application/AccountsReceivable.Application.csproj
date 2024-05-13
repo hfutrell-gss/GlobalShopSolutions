@@ -8,6 +8,8 @@
 
     <ItemGroup>
       <ProjectReference Include="..\AccountsReceivable.Domain\AccountsReceivable.Domain.csproj" />
+      <ProjectReference Include="..\AccountsReceivable.Integrations\AccountsReceivable.Integrations.csproj" />
+      <ProjectReference Include="..\GlobalShopSolutions.Server.Sdk\GlobalShopSolutions.Server.Sdk.csproj" />
       <ProjectReference Include="..\Modeling.Application\Modeling.Application.csproj" />
     </ItemGroup>
 

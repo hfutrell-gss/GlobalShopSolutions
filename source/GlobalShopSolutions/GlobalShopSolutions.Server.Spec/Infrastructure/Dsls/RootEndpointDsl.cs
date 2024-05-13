@@ -10,6 +10,6 @@ public sealed class RootEndpointDsl(ServerAdapter serverAdapter)
     {
         var value = await serverAdapter.Get("/");
         
-        Assert.Equal("Hi", value);
+        Assert.Equal("Welcome to the Globe!", value);
     }
 }
