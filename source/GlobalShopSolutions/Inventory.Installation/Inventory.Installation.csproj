@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Inventory.Application\Inventory.Application.csproj" />
+      <ProjectReference Include="..\Inventory.Endpoints\Inventory.Endpoints.csproj" />
+      <ProjectReference Include="..\Modeling.Infrastructure\Modeling.Infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>

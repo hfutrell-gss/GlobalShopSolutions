@@ -5,7 +5,7 @@ using Serilog;
 
 namespace GlobalShopSolutions.Server.Infrastructure.EndpointRouting;
 
-public sealed class EndpointRouteFactory 
+internal sealed class EndpointRouteFactory 
     : IEndpointRouteFactory
 {
     private readonly ILogger _logger;

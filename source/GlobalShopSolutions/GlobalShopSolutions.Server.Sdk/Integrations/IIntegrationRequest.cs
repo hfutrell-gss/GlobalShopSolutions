@@ -8,5 +8,4 @@ namespace GlobalShopSolutions.Server.Sdk.Integrations;
 /// </summary>
 /// <typeparam name="TIntegrationResponse"></typeparam>
 public interface IIntegrationRequest<TIntegrationResponse> 
-    : IRequest<Result<TIntegrationResponse>>
-    where TIntegrationResponse : IIntegrationResponse;
+    : IRequest<Result<TIntegrationResponse>>;

@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+      <ProjectReference Include="..\AccountsReceivable.Application\AccountsReceivable.Application.csproj" />
+      <ProjectReference Include="..\AccountsReceivable.Endpoints\AccountsReceivable.Endpoints.csproj" />
+      <ProjectReference Include="..\AccountsReceivable.Persistence\AccountsReceivable.Persistence.csproj" />
+      <ProjectReference Include="..\Modeling.Application\Modeling.Application.csproj" />
+      <ProjectReference Include="..\Modeling.Infrastructure\Modeling.Infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -11,21 +11,9 @@ WORKDIR /src
 
 RUN dotnet nuget add source https://nexus.spectralleap.com/repository/nuget-public/ -n nexus
 
-COPY ["GlobalShopSolutions.Server/GlobalShopSolutions.Server.csproj", "GlobalShopSolutions.Server/"]
-COPY ["GlobalShopSolutions.Server.Infrastructure/GlobalShopSolutions.Server.Infrastructure.csproj", "GlobalShopSolutions.Server.Infrastructure/"]
-COPY ["FinanceAndAccounting.Installation/FinanceAndAccounting.Installation.csproj", "FinanceAndAccounting.Installation/"]
-COPY ["AccountsReceivable.Endpoints/AccountsReceivable.Endpoints.csproj", "AccountsReceivable.Endpoints/"]
-COPY ["AccountsReceivable.Application/AccountsReceivable.Application.csproj", "AccountsReceivable.Application/"]
-COPY ["AccountsReceivable.Domain/AccountsReceivable.Domain.csproj", "AccountsReceivable.Domain/"]
-COPY ["Modeling.Domain/Modeling.Domain.csproj", "Modeling.Domain/"]
-COPY ["Modeling.Application/Modeling.Application.csproj", "Modeling.Application/"]
-COPY ["Modeling.Endpoints/Modeling.Endpoints.csproj", "Modeling.Endpoints/"]
-COPY ["AccountsReceivable.Infrastructure/AccountsReceivable.Infrastructure.csproj", "AccountsReceivable.Infrastructure/"]
-COPY ["Modeling.Infrastructure/Modeling.Infrastructure.csproj", "Modeling.Infrastructure/"]
-COPY ["Modeling.Areas.Installation/Modeling.Areas.Installation.csproj", "Modeling.Areas.Installation/"]
-COPY ["GlobalShopSolutions.Server.Sdk/GlobalShopSolutions.Server.Sdk.csproj", "GlobalShopSolutions.Server.Sdk/"]
-COPY ["Tests.Infrastructure.InMemory/Tests.Infrastructure.InMemory.csproj", "Tests.Infrastructure.InMemory/"]
 COPY ["Directory.Build.props", ""]
+
+COPY . .
 
 RUN dotnet restore "GlobalShopSolutions.Server/GlobalShopSolutions.Server.csproj"
 COPY . .

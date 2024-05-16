@@ -19,8 +19,9 @@
         <ProjectReference Include="..\FinanceAndAccounting.Installation\FinanceAndAccounting.Installation.csproj" />
         <ProjectReference Include="..\GlobalShopSolutions.Server.Sdk\GlobalShopSolutions.Server.Sdk.csproj" />
         <ProjectReference Include="..\Modeling.Application\Modeling.Application.csproj" />
-        <ProjectReference Include="..\AccountsReceivable.Infrastructure\AccountsReceivable.Infrastructure.csproj" />
+        <ProjectReference Include="..\AccountsReceivable.Installation\AccountsReceivable.Installation.csproj" />
         <ProjectReference Include="..\Modeling.Endpoints\Modeling.Endpoints.csproj" />
+        <ProjectReference Include="..\SupplyChainManagement.Installation\SupplyChainManagement.Installation.csproj" />
         <ProjectReference Include="..\Tests.Infrastructure.InMemory\Tests.Infrastructure.InMemory.csproj" />
     </ItemGroup>
 

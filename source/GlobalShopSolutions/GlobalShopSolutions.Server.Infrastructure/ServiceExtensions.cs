@@ -5,6 +5,7 @@ using FinanceAndAccounting.Installation;
 using Microsoft.AspNetCore.Builder;
 using Modeling.Application.Logging;
 using Serilog;
+using SupplyChainManagement.Installation;
 using Tests.Infrastructure.InMemory;
 
 namespace GlobalShopSolutions.Server.Infrastructure;
@@ -23,6 +24,7 @@ public static class ServiceExtensions
             configuration,
             installation: installer => installer
                 .InstallArea<FinanceAndAccountingAreaInstaller>()
+                .InstallArea<SupplyChainManagementAreaInstaller>()
         );
     }
 

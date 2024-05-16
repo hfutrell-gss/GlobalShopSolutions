@@ -1,4 +1,4 @@
-﻿using AccountsReceivable.Infrastructure;
+﻿using AccountsReceivable.Installation;
 using Modeling.Areas.Installation;
 
 namespace FinanceAndAccounting.Installation;

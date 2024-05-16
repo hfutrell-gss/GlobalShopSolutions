@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\AccountsReceivable.Application\AccountsReceivable.Application.csproj" />
+      <ProjectReference Include="..\AccountsReceivable.Domain\AccountsReceivable.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

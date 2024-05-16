@@ -1,5 +1,5 @@
-using GlobalShopSolutions.Server.Infrastructure.Buses;
 using GlobalShopSolutions.Server.Infrastructure.EventSourcing;
+using GlobalShopSolutions.Server.Infrastructure.Messaging;
 using GlobalShopSolutions.Server.Infrastructure.Validation;
 using GlobalShopSolutions.Server.Sdk.Integrations;
 using MediatR;

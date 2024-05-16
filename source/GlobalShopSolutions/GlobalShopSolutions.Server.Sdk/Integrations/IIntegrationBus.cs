@@ -32,7 +32,6 @@ public interface IIntegrationBus
      Task<Result<TIntegrationResponse>> Request<TIntegrationRequest, TIntegrationResponse>(
          TIntegrationRequest integrationRequest,
          CancellationToken cancellationToken
-     ) 
-         where TIntegrationRequest : IIntegrationRequest<TIntegrationResponse>
-         where TIntegrationResponse : IIntegrationResponse;
+     )
+         where TIntegrationRequest : IIntegrationRequest<TIntegrationResponse>;
 }

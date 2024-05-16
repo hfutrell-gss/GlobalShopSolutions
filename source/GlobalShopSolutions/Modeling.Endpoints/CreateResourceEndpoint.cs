@@ -2,9 +2,6 @@ using FastEndpoints;
 
 namespace Modeling.Endpoints;
 
-public interface IRoutable;
-
-
 public abstract class CreateResourceEndpoint<TRequest, TResponse> 
     : Endpoint<TRequest, TResponse>,
         IRoutable where TResponse : notnull
