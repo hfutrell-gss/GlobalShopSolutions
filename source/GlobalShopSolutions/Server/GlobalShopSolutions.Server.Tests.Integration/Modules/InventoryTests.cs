@@ -17,7 +17,7 @@ public sealed class InventoryTests
     [Fact]
     public async Task GetsIntegratedAccount()
     {
-        await _accountsReceivableDsl.CreateAccount();
+        await _accountsReceivableDsl.AddAccount();
         await _inventoryDsl.GetIntegratedAccount();
         
         _inventoryDsl.AssertAccountExists();

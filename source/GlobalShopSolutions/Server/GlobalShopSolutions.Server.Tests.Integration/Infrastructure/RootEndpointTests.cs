@@ -4,18 +4,18 @@ using GlobalShopSolutions.Server.Tests.Integration.Infrastructure.Dsls;
 namespace GlobalShopSolutions.Server.Tests.Integration.Infrastructure;
 
 [Collection(nameof(FixtureFactoryCollectionDefinition))]
-public sealed class RoodEndpointTests 
+public sealed class RootEndpointTests 
 {
     private readonly RootEndpointDsl _rootEndpointDsl;
 
-    public RoodEndpointTests(FixtureFactoryLifetimeAdapter adapter)
+    public RootEndpointTests(FixtureFactoryLifetimeAdapter adapter)
     {
         _rootEndpointDsl = adapter.FixtureFactory.GetFixture<RootEndpointDsl>();
     }
     
     [Fact]
-    public async Task Test1()
+    public async Task WelcomeMessageIsCorrect()
     {
-        await _rootEndpointDsl.AssertWelcomeMessage();
+        await _rootEndpointDsl.AssertWelcomeMessageIsWelcomeToTheGlobe();
     }
 }

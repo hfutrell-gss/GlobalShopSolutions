@@ -6,7 +6,7 @@ namespace GlobalShopSolutions.Server.Tests.Integration.Infrastructure.Dsls;
 public sealed class RootEndpointDsl(ServerAdapter serverAdapter)
     : Fixture
 {
-    public async Task AssertWelcomeMessage()
+    public async Task AssertWelcomeMessageIsWelcomeToTheGlobe()
     {
         var value = await serverAdapter.GetAsync("/");
         

@@ -65,13 +65,14 @@ public sealed class ServerAdapter
     {
         var response = await _httpClient.SendAsync(request);
                 
+        var responseContent = await response.Content.ReadAsStringAsync();
+        
         if (
             response.StatusCode != HttpStatusCode.OK
             && response.StatusCode != HttpStatusCode.Created
             ) 
-            throw new ApplicationException($"The request failed: {response.StatusCode}. {response.ReasonPhrase}");
+            throw new ApplicationException($"The request failed: {response.StatusCode}. {response.ReasonPhrase}: {responseContent}");
         
-        var responseContent = await response.Content.ReadAsStringAsync();
                 
         var content = JsonConvert.DeserializeObject<TResponse>(responseContent);
         

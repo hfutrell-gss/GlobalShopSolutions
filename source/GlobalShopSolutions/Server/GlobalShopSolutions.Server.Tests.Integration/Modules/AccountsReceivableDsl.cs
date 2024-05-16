@@ -11,13 +11,13 @@ public class AccountsReceivableDsl(ServerAdapter serverAdapter)
     
     private string Endpoint(string endpoint) => $"{ModuleEndpoint}/{endpoint}";
     
-    public async Task CreateAccount()
+    public async Task AddAccount()
     {
         await serverAdapter.PostAsync<AddAccountRequest, AddAccountResponse>(
             Endpoint("AddAccount"),
             new AddAccountRequest
             {
-                Name = "jimbo"
+                Name = Guid.NewGuid().ToString()//.Replace("-", "").Substring(0, 6)
             });
     }
 }

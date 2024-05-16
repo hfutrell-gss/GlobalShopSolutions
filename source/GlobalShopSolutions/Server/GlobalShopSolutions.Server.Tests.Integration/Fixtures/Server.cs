@@ -1,5 +1,3 @@
-using DotNet.Testcontainers.Builders;
-using DotNet.Testcontainers.Containers;
 using Microsoft.Extensions.DependencyInjection;
 using Truss.Testing.SharedDependencies;
 
@@ -25,15 +23,6 @@ public sealed class Server
     
     public async ValueTask DisposeAsync()
     {
-    }
 
-}
-
-public sealed class PostgresDependencyAdapter
-{
-    public string ConnectionString { get; }
-    public PostgresDependencyAdapter(string connectionString)
-    {
-        ConnectionString = connectionString;
     }
 }

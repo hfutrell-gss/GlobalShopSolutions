@@ -13,6 +13,8 @@ RUN dotnet nuget add source https://nexus.spectralleap.com/repository/nuget-publ
 
 COPY ["Directory.Build.props", ""]
 
+# todo: Need a way to do targeted copies for server items that doesn't
+# require developers adding their projects to the dockerfile
 COPY . .
 
 RUN dotnet restore "GlobalShopSolutions.Server/GlobalShopSolutions.Server.csproj"
