@@ -31,4 +31,8 @@
       <ProjectReference Include="..\Inventory.Endpoints\Inventory.Endpoints.csproj" />
     </ItemGroup>
 
+    <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+      <Exec Command="docker build -t globalshopsolutions.server:dev -f ../GlobalShopSolutions.Server/Dockerfile .." />
+    </Target>
+
 </Project>

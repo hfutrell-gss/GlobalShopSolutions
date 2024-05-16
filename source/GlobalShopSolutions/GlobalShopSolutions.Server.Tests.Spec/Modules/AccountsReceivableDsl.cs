@@ -14,10 +14,10 @@ public class AccountsReceivableDsl(ServerAdapter serverAdapter)
     public async Task CreateAccount()
     {
         await serverAdapter.PostAsync<AddAccountRequest, AddAccountResponse>(
-            Endpoint("AddAccountCommand"),
+            Endpoint("AddAccount"),
             new AddAccountRequest
             {
-                Name = Guid.NewGuid().ToString()
+                Name = "word"
             });
     }
 }

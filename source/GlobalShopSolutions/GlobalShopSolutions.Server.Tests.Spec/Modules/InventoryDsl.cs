@@ -16,7 +16,7 @@ public class InventoryDsl(ServerAdapter serverAdapter)
     public async Task GetIntegratedAccount()
     {
         _accounts = await serverAdapter.GetAsync<GetAccountsRequest, GetAccountsResponse>(
-            "GetAccount",
+            Endpoint("GetAccounts"),
             new GetAccountsRequest()
         );
     }

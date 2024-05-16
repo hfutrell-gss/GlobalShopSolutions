@@ -1,3 +1,4 @@
+using System.Net;
 using System.Text;
 using Newtonsoft.Json;
 
@@ -39,12 +40,14 @@ public sealed class ServerAdapter
     {
         var baseAddress = _httpClient.BaseAddress;
         var uri = new Uri(baseAddress, endpoint);
+
+        var content = new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json");
         
         var message = new HttpRequestMessage
         {
             RequestUri = uri,
             Method = HttpMethod.Post,
-            Content = new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json")
+            Content = content
         };
 
         return await SendAsync<TResponse>(message);
@@ -55,25 +58,24 @@ public sealed class ServerAdapter
         TRequest request
     )
     {
-         var message = new HttpRequestMessage
-         {
-             RequestUri = new Uri(endpoint),
-             Method = HttpMethod.Post,
-             Content = new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json")
-         };
- 
-         return await SendAsync<TResponse>(message);       
+        return await PostAsync<TRequest, TResponse>(endpoint, request);
     }
     
     private async Task<TResponse> SendAsync<TResponse>(HttpRequestMessage request)
     {
         var response = await _httpClient.SendAsync(request);
                 
+        if (
+            response.StatusCode != HttpStatusCode.OK
+            && response.StatusCode != HttpStatusCode.Created
+            ) 
+            throw new ApplicationException($"The request failed: {response.StatusCode}. {response.ReasonPhrase}");
+        
         var responseContent = await response.Content.ReadAsStringAsync();
                 
         var content = JsonConvert.DeserializeObject<TResponse>(responseContent);
         
-        if (content is null) throw new ApplicationException("The request failed");
+        if (content is null) throw new ApplicationException("The response was empty");
         
         return content;
     }
